@@ -12,8 +12,8 @@ export default React.createClass({
               </div>
               <div className="logo">
                 <img src="../../assets/images/mamaslogo.png"/>
+                <Nav/>
               </div>
-              <Nav/>
             </header>
     )
   }

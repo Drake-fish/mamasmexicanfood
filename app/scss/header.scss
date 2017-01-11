@@ -1,0 +1,47 @@
+.top-liner{
+  background:black;
+  h4{
+    margin: 0;
+    font-size: .8rem;
+    padding-top: .3rem;
+    color: rgb(123, 123, 123);
+  }
+}
+.logo{
+  width: 100%;
+  text-align: center;
+  background: url(../../assets/images/woodbackground.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 8rem;
+  position: relative;
+  img{
+    width: 16rem;
+    margin-top: -56px;
+    margin-left: -19px;
+  }
+}
+nav{
+  position: absolute;
+    bottom: -5px;
+    color: white;
+    width: 100%;
+    padding-bottom: .3rem;
+    padding-top: .3rem;
+  li{
+    background: rgba(0,0,0,.5);
+    display: inline-block;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  font-size: .7rem;
+  padding-top: .3rem;
+  width: 20%;
+  box-sizing: border-box;
+  padding-bottom: .3rem;
+  transition:all .3s ease-in-out;
+  cursor:pointer;
+  &:hover{
+    color:#e78023;
+  }
+  }
+}
