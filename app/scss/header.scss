@@ -1,11 +1,14 @@
+.home{
+  background:#3a3a3a;
+  font-family:sans-serif;
+}
 .top-liner{
-  background:black;
-  h4{
-    margin: 0;
-    font-size: .8rem;
-    padding-top: .3rem;
-    color: rgb(123, 123, 123);
-  }
+  background:rgba(0,0,0,.5);
+  height:2rem;
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1;
 }
 .logo{
   width: 100%;
@@ -13,35 +16,73 @@
   background: url(../../assets/images/woodbackground.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  height: 8rem;
+  height: 15rem;
   position: relative;
   img{
-    width: 16rem;
-    margin-top: -56px;
-    margin-left: -19px;
+    width: 13rem;
+    margin-top: 22px;
+  }
+  h4{
+    margin-top: -81px;
+  font-size: 1rem;
+  padding-top: .3rem;
+  color: white;
+  width: 100%;
+  background: rgba(0,0,0,.3);
   }
 }
-nav{
-  position: absolute;
-    bottom: -5px;
-    color: white;
-    width: 100%;
-    padding-bottom: .3rem;
-    padding-top: .3rem;
-  li{
-    background: rgba(0,0,0,.5);
-    display: inline-block;
-  padding-right: 1rem;
-  padding-left: 1rem;
-  font-size: .7rem;
-  padding-top: .3rem;
-  width: 20%;
-  box-sizing: border-box;
-  padding-bottom: .3rem;
-  transition:all .3s ease-in-out;
-  cursor:pointer;
-  &:hover{
-    color:#e78023;
+// nav{
+//   position: absolute;
+//     bottom: -5px;
+//     color: white;
+//     width: 100%;
+//     padding-bottom: .3rem;
+//     padding-top: .3rem;
+//   li{
+//     background: rgba(0,0,0,.5);
+//     display: inline-block;
+//   padding-right: 1rem;
+//   padding-left: 1rem;
+//   font-size: .7rem;
+//   padding-top: .3rem;
+//   width: 20%;
+//   box-sizing: border-box;
+//   padding-bottom: .3rem;
+//   transition:all .3s ease-in-out;
+//   cursor:pointer;
+//   &:hover{
+//     color:#e78023;
+//   }
+//   }
+// }
+.full-nav{
+  display:none;
+}
+.nav{
+  .fa{
+    position:fixed;
+    top:8px;
+    right:18px;
+    color:white;
   }
+  nav{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    list-style: none;
+    text-decoration: none;
+    background: rgba(0,0,0,.5);
+    font-size: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    a{
+      color:white;
+      text-decoration:none;
+    }
+    li{
+      margin-bottom:.5rem;
+      font-size:1.5rem;
+    }
   }
 }

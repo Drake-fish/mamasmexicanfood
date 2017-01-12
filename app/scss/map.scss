@@ -1,0 +1,52 @@
+.map{
+  width: 90%;
+  display: block;
+margin: 0 auto;
+border: 2px solid white;
+margin-top: 1rem;
+text-align: center;
+position: relative;
+border-radius: 3px;
+box-shadow: 0 0 12px black;
+background:#e2e2e2;
+.carousel{
+  margin-top:1rem;
+  .carousel-img{
+    height:100%;
+    width:100%;
+    right:0;
+  }
+}
+}
+.info-break{
+  height: 3px;
+    width: 100%;
+    margin-top: 26px;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    position: absolute;
+}
+.info-title{
+  position: relative;
+      background: #e2e2e2;
+      display: inline-block;
+      padding-left: .3rem;
+      padding-right: .3rem;
+      color: #e7711b;
+      margin-bottom:0;
+}
+.info{
+  text-align: left;
+    margin-left: 12px;
+    font-size: .8rem;
+    margin-bottom: 0;
+}
+.directions{
+  text-align: left;
+display: block;
+margin-left: 12px;
+margin-top: .3rem;
+color: green;
+font-size: .8rem;
+padding-bottom: .3rem;
+}

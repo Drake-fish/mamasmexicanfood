@@ -1,0 +1,97 @@
+.carousel {
+position: relative;
+width: 90%;
+margin: 0 auto;
+background: transparent;
+border: 4px solid black;
+height: 117px;
+box-sizing: border-box;
+margin-top: -2rem;
+overflow:hidden;
+box-shadow: 0 0 10px 1px black;
+background:white;
+
+}
+
+.carousel-img {
+	position: absolute;
+	width: 100%;
+}
+
+.carousel-enter {
+	left: 120%;
+}
+
+.carousel-enter-active {
+	left: 0%;
+	transition: left 2s;
+}
+
+.carousel-leave {
+	left: 0;
+}
+
+.carousel-leave-active {
+	left: -120%;
+	transition: left 1s;
+}
+.playing{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.5);
+    position: relative;
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 2rem;
+    color: white;
+    opacity:0;
+    transition:all .3s ease-in-out;
+    cursor:pointer;
+    &:hover{
+      opacity:1;
+    }
+}
+.paused{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.5);
+  position: relative;
+  text-align: center;
+  padding-top: 2rem;
+  font-size: 2rem;
+  color: white;
+  cursor:pointer;
+}
+h2{
+  color:white;
+  font-size:1rem;
+  text-align:center;
+}
+h3{
+  font-size:.9rem;
+  text-align:center;
+  color:#f98e22;
+  .fa{
+    font-size:.5rem;
+    vertical-align:middle;
+    margin-left:.3rem;
+    margin-right:.3rem;
+    color:white;
+  }
+}
+.order{
+  margin: 0 auto;
+display: block;
+color: white;
+background: green;
+background-color: #039208;
+border-radius: 3px;
+}
+.break{
+  width: 90%;
+height: 2px;
+border-top: 2px solid grey;
+border-bottom: 2px solid white;
+margin: 0 auto;
+margin-top: .5rem;
+}

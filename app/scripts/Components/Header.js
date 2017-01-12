@@ -8,11 +8,10 @@ export default React.createClass({
     return(
             <header>
               <div className="top-liner">
-                <h4>Authentic Fresh and Homemade Since 2007</h4>
+              <Nav/>
               </div>
               <div className="logo">
-                <img src="../../assets/images/mamaslogo.png"/>
-                <Nav/>
+                <img src="../../assets/images/mamaslogo-small.png"/>
               </div>
             </header>
     )
