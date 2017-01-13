@@ -12,6 +12,9 @@ export default React.createClass({
 	componentDidMount() {
 		this.startCarousel();
 	},
+  componentWillUnmount(){
+    this.stopCarousel();
+  },
 	render() {
     let paused=(
                 <div className="paused">
