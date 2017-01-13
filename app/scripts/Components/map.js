@@ -3,9 +3,9 @@ import React from 'react';
 export default React.createClass({
   render(){
     let url=`https://www.google.com/maps/embed/v1/place?q=1461%20Lee%20Trevino%20El%20Paso,%20tx&key=AIzaSyDi7Dus0sr6U1ZjH_ixNtWF8fV2reeFDn0`
-    let map=(<iframe className="map" src={url}></iframe>);
+    let map=(<iframe className="google-map" src={url}></iframe>);
     return(
-      <div className="map">
+      <div className="story-box">
       <div className="info-break">
       </div>
       <h4 className="info-title">JOIN US!</h4>

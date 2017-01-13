@@ -6,7 +6,7 @@ import reviews from '../reviewData';
 export default React.createClass({
   render(){
     return(
-      <div className="map">
+      <div className="story-box">
       <div className="info-break">
       </div>
       <h4 className="info-title">People Love Us!</h4>

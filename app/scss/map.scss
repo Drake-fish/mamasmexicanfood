@@ -1,4 +1,4 @@
-.map{
+.story-box{
   width: 90%;
   display: block;
 margin: 0 auto;
@@ -11,12 +11,20 @@ box-shadow: 0 0 12px black;
 background:#e2e2e2;
 .carousel{
   margin-top:1rem;
+  height:9rem;
   .carousel-img{
     height:100%;
     width:100%;
     right:0;
+    .fa-play .fa-pause{
+      padding-top:3rem;
+    }
   }
 }
+}
+.google-map{
+  width:90%;
+  margin-top:1rem;
 }
 .info-break{
   height: 3px;
@@ -49,4 +57,28 @@ margin-top: .3rem;
 color: green;
 font-size: .8rem;
 padding-bottom: .3rem;
+}
+ul{
+  padding:0;
+  list-style:none;
+}
+.hours{
+  &::after{
+    content:"";
+    display:block;
+    clear:both;
+  }
+  .day{
+    float:left;
+    margin-left:1rem;
+
+  }
+  .time{
+    float:right;
+    margin-right:1rem;
+  }
+
+}
+.specials{
+  margin-bottom:0.5rem;
 }
