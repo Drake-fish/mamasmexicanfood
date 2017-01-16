@@ -36,7 +36,7 @@ export default React.createClass({
 				<TGroup
 					transitionName="carousel"
 					transitionEnterTimeout={2000}
-					transitionLeaveTimeout={1000}>
+					transitionLeaveTimeout={2000}>
 					<img
 						key={this.state.imgIndex}
 						className="carousel-img"

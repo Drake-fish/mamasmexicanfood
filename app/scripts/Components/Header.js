@@ -10,9 +10,9 @@ export default React.createClass({
               <div className="top-liner">
               <Nav/>
               </div>
-              <div className="logo">
+              <Link to="/"><div className="logo">
                 <img src="../../assets/images/mamaslogo-small.png"/>
-              </div>
+              </div></Link>
             </header>
     )
   }

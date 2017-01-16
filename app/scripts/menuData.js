@@ -33,27 +33,34 @@
           name: "Tampiquena Rib-Eye Steak",
           price: 16.99,
           description: "A Rib-Eye Steak topped with our special long green chiles, tomatoes, onions and topped with our special mix of melted cheeses accompanied with one red cheese enchilada served with rice and beans",
+          options: ["Tomatoes","Onions","Cheese", "Long Green Chiles","Rice and Beans"]
       }, {
           name: "Tampiquena Breast of Chicken",
           price: 14.99,
           description: "A Breast of chicken topped with our special long green chile, tomatoes, onions and topped with our special mix of melted cheeses accompanied with one green cheese enchilada served with rice and beans",
+          options: ["Tomatoes","Onions","Cheese", "Long Green Chiles","Rice and Beans"]
       }, {
           name: "Mama's Red Beef Mexican Plate",
           price: 12.99,
           description: "1 Beef Gordita, 1 red cheese enchilada, 1 beef flauta, 1 beef taco served in a bed of lettuce, tomato, sour cream and cheese, served with rice and beans",
+          options: ["Tomatoes","Onions","Cheese","Rice and Beans"]
       }, {
           name: "Mama's Green Chicken Mexican Plate",
           price: 12.99,
-          description: "1 Chicken Gordita, 1 green cheese enchilada, 1 Chicken flauta, 1 chicken taco served in a bed of lettuce, tomato, sour cream and cheese, served with rice and beans"
+          description: "1 Chicken Gordita, 1 green cheese enchilada, 1 Chicken flauta, 1 chicken taco served in a bed of lettuce, tomato, sour cream and cheese, served with rice and beans",
+          options: ["Tomatoes","Onions","Cheese", "Rice and Beans"]
       }, {
           name: "Gabe's Combo",
           price: 10.99,
           description: "(2) Cheese or Chicken enchiladas topped with any of our homemade sauces and (2) beef or chicken tacos served with rice and beans",
+          options: ["Tomatoes","Onions","Cheese","Rice and Beans"]
       }, {
           name: "Gorditas",
           price: 9.99,
-          description: "Your choice of (3) ground beef or chicken corn Gorditas served in a bed of lettuce, tomato, sour cream, topped with cheese served with rice and beans Extra Gordita $2.99"
+          description: "Your choice of (3) ground beef or chicken corn Gorditas served in a bed of lettuce, tomato, sour cream, topped with cheese served with rice and beans Extra Gordita $2.99",
+          options: ["Tomatoes","Onions","Cheese", "Long Green Chiles","Rice and Beans"]
       },
+
 
 
   ];

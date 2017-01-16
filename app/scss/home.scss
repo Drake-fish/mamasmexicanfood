@@ -20,7 +20,7 @@ background:white;
 }
 
 .carousel-enter {
-	left: 120%;
+	left: 100%;
 }
 
 .carousel-enter-active {
@@ -33,8 +33,8 @@ background:white;
 }
 
 .carousel-leave-active {
-	left: -120%;
-	transition: left 1s;
+	left: -100%;
+	transition: left 2s;
 }
 .playing{
     width: 100%;
