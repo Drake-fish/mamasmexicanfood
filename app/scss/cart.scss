@@ -1,0 +1,48 @@
+.menu-container{
+  margin-bottom:3rem;
+}
+.total{
+  padding-top: 1rem;
+    padding-bottom: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: black;
+    color: white;
+    z-index: 3;
+    h4{
+      margin:0;
+    }
+}
+.cart{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:rgba(0,0,0,.8);
+  z-index:3;
+  color:white;
+  list-style:none;
+  .fa-times{
+    font-size:1.5rem;
+  }
+  li{
+    border-bottom:1px dashed white;
+    h3{
+      text-align:left;
+      margin-left:1rem;
+      span{
+        float:right;
+        margin-right:1rem;
+      }
+    }
+    h4{
+      margin-left:1rem;
+    }
+    button{
+      color:red;
+      background:white;
+      margin-bottom:.5rem;
+      margin-left:1rem;
+    }
+  }
+}

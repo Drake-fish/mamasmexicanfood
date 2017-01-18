@@ -17,7 +17,7 @@ export default React.createClass({
       let toppings;
       if(this.props.items.options){
         toppings=this.props.items.options.map((opt)=>{
-          return <Option opts={opt}/>
+          return <label><input type="checkbox" value={opt} onChange={this.toggleToppings} ref={opt}/>No {opt}</label>
         });
       }
 
@@ -36,8 +36,10 @@ export default React.createClass({
               <div className="item-detals">
                   <h5 onClick={this.closeMenu} className="name"><i className="fa fa-arrow-circle-o-left" aria-hidden="true"></i>{this.props.items.name}</h5>
                   {description}
-                  {toppings}
-                  <button  onClick={this.addItem} className="add">Add {this.props.items.price}</button>
+                  <form onSubmit={this.handleSubmit}>
+                    {toppings}
+                    <input type="submit" className="add" value={this.props.items.price}/>
+                  </form>
               </div>
 
 
@@ -59,11 +61,22 @@ export default React.createClass({
   closeMenu(){
     this.setState({open:false});
   },
-  addItem(){
-    let toppings=this.state.toppings;
-    let price=this.props.items.price;
-    let name= this.props.items.name;
-    store.cart.addItem(price, 1, name, toppings);
-  },
+
+  handleSubmit(e){
+    e.preventDefault();
+    let array=[];
+    _.mapObject(this.refs,(ref, val)=>{
+      if(ref.checked){
+        array.push("No "+val);
+      }
+    });
+    var item={name:this.props.items.name,
+              toppings:array,
+              price:this.props.items.price,
+              quantity:1}
+    store.cart.addItem(item);
+    store.cart.getTotal();
+  }
+
 
 });

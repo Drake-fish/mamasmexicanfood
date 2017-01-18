@@ -8,14 +8,12 @@ export default React.createClass({
     }
   },
   render(){
-    let option=  <span className="not-selected" onClick={this.markout}>{this.props.opts}</span>;
-    if(this.state.selected){
-      option=<span className="selected" onClick={this.markout}>{this.props.opts}</span>
-    }
-    return (
-            <div>
-              {option}
-            </div>
+    // let option=  <span className="not-selected" onClick={this.markout}>{this.props.opts}</span>;
+    // if(this.state.selected){
+    //   option=<input type="checkbox" className="selected" onClick={this.markout}>{this.props.opts}</span>
+    // }
+    return (<label><input ref={this.props.opts} type="checkbox"/>{this.props.opts}</label>
+
           );
   },
   markout(e){

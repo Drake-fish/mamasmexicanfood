@@ -2,7 +2,7 @@ import React from 'react';
 
 import menuData from '../menuData';
 import MenuItems from '../Components/MenuItems';
-
+import CartItems from '../Components/cart-items';
 export default React.createClass({
   render(){
     const appetizers=menuData.appetizers;
@@ -27,6 +27,7 @@ export default React.createClass({
             <MenuItems data={sides}/>
             <MenuItems data={beverages}/>
             <MenuItems data={desserts}/>
+            <CartItems/>
           </div>
     );
   }
