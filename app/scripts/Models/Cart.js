@@ -13,7 +13,6 @@ export default Backbone.Model.extend({
       //get items array
       console.log(item);
         let items = this.get('items');
-        let prices= this.get('prices');
           let newItems=items.concat(item);
 
           this.set({'items':newItems});
@@ -37,6 +36,7 @@ export default Backbone.Model.extend({
         }, 0);
         this.set({'total':cartTotal});
     }
+
 
 
 });
