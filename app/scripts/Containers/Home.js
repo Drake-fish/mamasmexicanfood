@@ -17,7 +17,7 @@ export default React.createClass({
         <h3>Authentic<i className="fa fa-circle" aria-hidden="true"></i>Fresh<i className="fa fa-circle" aria-hidden="true"></i>Catering</h3>
         <div className="buttons">
             <Link to="menu"><button className="order">Menu</button></Link>
-            <button className="order">Order</button>
+            <Link to="menu"><button className="order">Order</button></Link>
         </div>
 
         <div className="break">

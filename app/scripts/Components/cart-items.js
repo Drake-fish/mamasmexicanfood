@@ -3,6 +3,8 @@ import $ from 'jquery';
 import store from '../store';
 import CartItem from './cartItem';
 
+import moment from 'moment';
+
 export default React.createClass({
   getInitialState(){
     return{
@@ -18,33 +20,78 @@ export default React.createClass({
     });
   },
   render(){
+
     let allCartItems=this.state.cart.items.map((item,i,arr)=>{
       return(
             <CartItem key={i} item={item}/>
       );
     });
-    let cart=<div onClick={this.openCart} className="total">
-                <h4>Your Total: ${Math.round(this.state.cart.total * 100)/100}</h4>
-            </div>
+    let cart=(<div className="total">
+                <h4 className="total-bottom" onClick={this.toggleCart}>Total: ${Math.round(this.state.cart.total * 100)/100}</h4>
+                <div className="cart">
+                        <i className="fa fa-times" aria-hidden="true" onClick={this.toggleCart}></i>
+                        {allCartItems}
+                        <div className="cart-total">
+                          <button onClick={this.toggleCheckout} className="checkout">Check out</button>
+                          <h4>Total:  ${Math.round(this.state.cart.total * 100)/100}</h4>
+                        </div>
+                      </div>
+                      <div onClick={this.toggleCheckout} className="checkout-form"></div>
+                        <form className="form" onSubmit={this.checkout}>
+                          <input ref="name" type="text" placeholder="Name"/>
+                          <input ref="email" type="email" placeholder="Email"/>
+                          <input ref="phone" type="phone" placeholder="Phone Number"/>
+                          <h3>Estimated time of pick-up</h3>
+                          <input type="submit" value="CHECKOUT"/>
+                        </form>
+
+                </div>
+              );
     if(this.state.cartOpen && !this.state.checkout){
-      cart=(<div className="cart">
-              <i className="fa fa-times" aria-hidden="true" onClick={this.closeCart}></i>
-              {allCartItems}
-              <div className="cart-total">
-                <button onClick={this.openCheckout} className="checkout">Check out</button>
-                <h4>Your Total:  ${Math.round(this.state.cart.total * 100)/100}</h4>
-              </div>
-            </div>)
-    }else if(this.state.cartOpen && this.state.checkout){
-      cart=(<div onClick={this.closeCheckout} className="checkout-form">
-              <form onSubmit={this.checkout}>
-                <input ref="name" type="text" placeholder="Name"/>
-                <input ref="email" type="email" placeholder="Email"/>
-                <input ref="phone" type="phone" placeholder="Phone Number"/>
-                <h3>Estimated time of pick-up</h3>
-                <input type="submit" value="CHECKOUT"/>
-              </form>
-            </div>
+      cart=(<div className="total total-hide">
+                  <h4 className="total-top">Total: ${Math.round(this.state.cart.total * 100)/100}</h4>
+                  <div className="cart cart-active">
+                          <i className="fa fa-times" aria-hidden="true" onClick={this.toggleCart}></i>
+                          {allCartItems}
+                          <div className="cart-total">
+                            <button onClick={this.toggleCheckout} className="checkout">Check out</button>
+                            <h4>Total:  ${Math.round(this.state.cart.total * 100)/100}</h4>
+                          </div>
+                        </div>
+                        <div onClick={this.toggleCheckout} className="checkout-form"></div>
+                          <form className="form" onSubmit={this.checkout}>
+                            <input ref="name" type="text" placeholder="Name"/>
+                            <input ref="email" type="email" placeholder="Email"/>
+                            <input ref="phone" type="phone" placeholder="Phone Number"/>
+                            <h3>Estimated time of pick-up</h3>
+                            <input type="submit" value="CHECKOUT"/>
+                          </form>
+
+                  </div>
+                );
+    }else if(!this.state.cartOpen && this.state.checkout){
+      let date=moment().add(15,'minutes').calendar();
+      cart=(
+              <div className="total total-hide">
+                          <h4 className="total-top">Total: ${Math.round(this.state.cart.total * 100)/100}</h4>
+                          <div className="cart">
+                                  <i className="fa fa-times" aria-hidden="true" onClick={this.toggleCart}></i>
+                                  {allCartItems}
+                                  <div className="cart-total">
+                                    <button onClick={this.toggleCart} className="checkout">Check out</button>
+                                    <h4>Total:  ${Math.round(this.state.cart.total * 100)/100}</h4>
+                                  </div>
+                                </div>
+                                <div onClick={this.toggleCheckout} className="checkout-form checkout-open"></div>
+                                  <form className="form form-open" onSubmit={this.checkout}>
+                                    <input ref="name" type="text" placeholder="Name"/>
+                                    <input ref="email" type="email" placeholder="Email"/>
+                                    <input ref="phone" type="phone" placeholder="Phone Number"/>
+                                    <h3>Estimated time of pick-up: {date}</h3>
+                                    <input type="submit" value="CHECKOUT"/>
+                                  </form>
+
+                          </div>
           );
     }
 
@@ -53,18 +100,12 @@ export default React.createClass({
           </div>
         );
   },
-  openCart(){
-    this.setState({cartOpen:true});
-  },
-  closeCart(){
-    this.setState({cartOpen:false});
-  },
-  openCheckout(){
-    this.setState({checkout:true});
-  },
-  closeCheckout(){
-    this.setState({checkout:false});
-  },
+toggleCart(){
+  this.setState({cartOpen:!this.state.cartOpen})
+},
+toggleCheckout(){
+  this.setState({cartOpen:false, checkout:!this.state.checkout});
+},
   checkout(e){
     e.preventDefault();
     let items=JSON.stringify(this.state.cart.items);
@@ -72,6 +113,7 @@ export default React.createClass({
     let email=this.refs.email.value;
     let phone=this.refs.phone.value;
     let total=Math.round(this.state.cart.total * 100)/100;
+    let date=moment().add(15,'minutes').calendar();
 
     $.ajax({
         type: 'POST',
@@ -80,9 +122,9 @@ export default React.createClass({
         data: JSON.stringify({
             subject: "order " + name,
             bodyparts:{
-              textmessage: "order: " +items + " " + phone + "Total:" + total
+              textmessage: "order: " +items + " " + phone + "Total:" + total +"Picking up at " + date
             },
-            to:['drakefishatx@gmail.com']
+            to:['drake_fish@yahoo.com']
         }),
         success:(response)=>{
           console.log('message-sent');

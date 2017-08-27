@@ -6,7 +6,6 @@ export default React.createClass({
 		return {
 			imgIndex: 0,
 			interval: null,
-      paused:false
 		};
 	},
 	componentDidMount() {
@@ -16,19 +15,6 @@ export default React.createClass({
     this.stopCarousel();
   },
 	render() {
-    let paused=(
-                <div className="paused">
-                  <i className="fa fa-play" aria-hidden="true"></i>
-                </div>
-    );
-    if(!this.state.paused){
-      paused=(
-              <div className="playing">
-                <i className="fa fa-pause" aria-hidden="true"></i>
-              </div>
-      );
-
-    }
 		return (
 			<div
 				onClick={this.toggleCarousel}
@@ -42,7 +28,6 @@ export default React.createClass({
 						className="carousel-img"
 						src={this.props.images[this.state.imgIndex].src}/>
 				</TGroup>
-        {paused}
 			</div>
 			);
 	},
@@ -55,10 +40,9 @@ export default React.createClass({
 	},
 	stopCarousel() {
 		clearInterval(this.state.interval);
-		this.setState({interval: null, paused:true});
+		this.setState({interval: null});
 	},
 	startCarousel() {
-    this.setState({paused:false});
 		this.setState({interval: setInterval(() => {
 			if (this.state.imgIndex >= this.props.images.length - 1) {
 				this.setState({imgIndex: 0});

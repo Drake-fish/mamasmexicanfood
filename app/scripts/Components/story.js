@@ -3,7 +3,7 @@ import React from 'react';
 export default React.createClass({
   render(){
     return(
-      <div className="story-box">
+      <div id="story" className="story-box">
       <div className="info-break">
       </div>
       <h4 className="info-title">Story</h4>

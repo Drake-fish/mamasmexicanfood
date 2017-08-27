@@ -19,6 +19,7 @@ export default Backbone.Model.extend({
 
 
     },
+
     removeItem(item) {
         let newItems = _.without(this.get('items'), item);
         this.set({
@@ -27,10 +28,13 @@ export default Backbone.Model.extend({
 
 
     },
+    updateQuantity(item){
+      console.log(item);
+
+    },
     getTotal() {
         let items=this.get('items');
         let prices = _.pluck(items,'price');
-        console.log(prices);
         let cartTotal = prices.reduce(function(a, b) {
             return a + b;
         }, 0);

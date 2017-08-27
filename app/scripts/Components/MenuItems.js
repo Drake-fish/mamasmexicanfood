@@ -4,7 +4,7 @@ import MenuItem from './MenuItem';
 export default React.createClass({
   getInitialState(){
     return{
-            open:false
+            open:false,
     }
   },
   render(){
@@ -15,24 +15,20 @@ export default React.createClass({
             );
       }else{
         items=this.props.data.map((item,i,arr)=>{
-          return (<div className="open-section">
-                    <MenuItem key={i} items={item}/>
+          return (<div key={i} className="open-section">
+                    <MenuItem items={item}/>
                   </div>
                 );
         });
       }
     return(
-      <div className="menu-section">
+      <div  className="menu-section">
         <h3 onClick={this.toggleMenu} className="title">{this.props.data[0].title}</h3>
         {items}
       </div>
     );
   },
   toggleMenu(){
-    if(!this.state.open){
-    this.setState({open:true});
-    }else{
-      this.setState({open:false});
-    }
+    this.setState({open:!this.state.open})
   }
 });

@@ -2,6 +2,7 @@
   import React from 'react';
 import {Link} from 'react-router';
 
+
 export default React.createClass({
   getInitialState(){
     return{
@@ -10,17 +11,30 @@ export default React.createClass({
     };
   },
   render(){
-    let nav= <i className="fa fa-bars" aria-hidden="true" onClick={this.handleMenu}></i>
+    let nav=   (
+      <div>
+        <i className="fa fa-bars" aria-hidden="true" onClick={this.toggleMenu}></i>
+        <nav>
+           <Link to="#" ><li onClick={this.toggleMenu} className="nav-link">Home</li></Link>
+           <Link to="menu" ><li onClick={this.toggleMenu} className="nav-link">Menu</li></Link>
+           <Link to="#story" ><li onClick={this.toggleMenu} className="nav-link">Story</li></Link>
+           <Link to="#contact" ><li onClick={this.toggleMenu} className="nav-link">Contact</li></Link>
+           <Link to="menu" ><li onClick={this.toggleMenu} className="nav-link">Order</li></Link>
+        </nav>
+      </div>
+    );
     if(this.state.menu){
       nav=(
-        <nav>
-          <i className="fa fa-times" aria-hidden="true" onClick={this.closeMenu}></i>
-          <a onClick={this.closeMenu} href="/"><li className="nav-link">Home</li></a>
-          <a onClick={this.closeMenu}  href="#"><li className="nav-link">Menu</li></a>
-          <a onClick={this.closeMenu}  href="#"><li className="nav-link">Story</li></a>
-          <a onClick={this.openContact}  href="#"><li className="nav-link">Contact</li></a>
-          <Link onClick={this.closeMenu}><li className="nav-link">Order</li></Link>
-        </nav>
+        <div>
+          <i className="fa fa-times" aria-hidden="true" onClick={this.toggleMenu}></i>
+          <nav className="nav-open">
+            <Link to="#" ><li onClick={this.toggleMenu} className="nav-link home">Home</li></Link>
+             <Link to="menu" ><li onClick={this.toggleMenu} className="nav-link">Menu</li></Link>
+             <Link to="#story" ><li onClick={this.toggleMenu} className="nav-link">Story</li></Link>
+             <Link to="#contact" ><li onClick={this.toggleMenu} className="nav-link">Contact</li></Link>
+             <Link to="menu" ><li onClick={this.toggleMenu} className="nav-link">Order</li></Link>
+          </nav>
+        </div>
       );
     }
     if(this.state.contact){
@@ -32,25 +46,13 @@ export default React.createClass({
       );
     }
     return(<div className="nav">
-            <ul className="full-nav">
-              <a href="/"><li className="nav-link">Home</li></a>
-              <a href="#portfolio"><li className="nav-link">Portfolio</li></a>
-              <a href="#about"><li className="nav-link">About</li></a>
-              <a onClick={this.openContact}  href="#contact"><li className="nav-link">Contact</li></a>
-              <Link to="resume"><li className="nav-link">Resume</li></Link>
-            </ul>
             {nav}
           </div>
     );
   },
-  handleMenu(){
+  toggleMenu(){
     this.setState({
-      menu:true
-    });
-  },
-  closeMenu(){
-    this.setState({
-      menu:false
+      menu:!this.state.menu
     });
   },
   openContact(){

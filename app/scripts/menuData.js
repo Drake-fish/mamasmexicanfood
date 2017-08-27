@@ -151,7 +151,7 @@
   var soups = [{
           title: "Mamacita's Soups & Salads",
           name: "Call for Soups of the day! (915)-595-1990",
-          price: "Large: $6.99 Medium: $5.99 Small: $4.99 Cup: 2.99",
+          price: 6.99,
           description: "Mama's Homemade Soups"
       }, {
           name: "Mexican Taco Salad",

@@ -16,8 +16,8 @@ export default React.createClass({
       let extraPrice;
       let toppings;
       if(this.props.items.options){
-        toppings=this.props.items.options.map((opt)=>{
-          return <label><input type="checkbox" value={opt} onChange={this.toggleToppings} ref={opt}/>No {opt}</label>
+        toppings=this.props.items.options.map((opt,i)=>{
+          return <label key={i}><input type="checkbox" value={opt} onChange={this.toggleToppings} ref={opt}/>No {opt}</label>
         });
       }
 
@@ -30,15 +30,15 @@ export default React.createClass({
       if(this.props.extraPrice){
         extraPrice=<h5 className="price">{this.props.items.extraPrice}</h5>;
       }
-      let item=(<h5 onClick={this.openMenu} className="name">{this.props.items.name}</h5>);
+      let item=(<h5 onClick={this.toggleMenu} className="name">{this.props.items.name}</h5>);
       if(this.state.open){
         item=(
               <div className="item-detals">
-                  <h5 onClick={this.closeMenu} className="name"><i className="fa fa-arrow-circle-o-left" aria-hidden="true"></i>{this.props.items.name}</h5>
+                  <h5 onClick={this.toggleMenu} className="name"><i className="fa fa-arrow-circle-o-left" aria-hidden="true"></i>{this.props.items.name}</h5>
                   {description}
                   <form onSubmit={this.handleSubmit}>
                     {toppings}
-                    <input type="submit" className="add" value={this.props.items.price}/>
+                    <input type="submit" className="add" value={`ADD $${this.props.items.price}`}/>
                   </form>
               </div>
 
@@ -55,12 +55,9 @@ export default React.createClass({
           </li>
     );
   },
-  openMenu(){
-    this.setState({open:true});
-  },
-  closeMenu(){
-    this.setState({open:false});
-  },
+toggleMenu(){
+  this.setState({open: !this.state.open})
+},
 
   handleSubmit(e){
     e.preventDefault();

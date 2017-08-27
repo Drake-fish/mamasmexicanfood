@@ -1,6 +1,5 @@
 .menu-section{
   position:relative;
-  z-index:2;
   background:  #b60202;
   padding-top:2rem;
   padding-bottom:1rem;
@@ -21,6 +20,7 @@
       width: 86%;
     margin: 0 auto;
     padding-bottom:1rem;
+    border-bottom:1px solid black;
     }
     .name{
       display:inline-block;
@@ -37,4 +37,17 @@
 }
 .selected{
   text-decoration:line-through;
+}
+form{
+  label{
+    display:block;
+    margin-bottom:7px;
+  }
+}
+.add{
+  background: green;
+border: none;
+color: white;
+padding: 7px;
+width: 122px
 }
