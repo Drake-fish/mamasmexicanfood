@@ -15,6 +15,7 @@ export default React.createClass({
       let extras;
       let extraPrice;
       let toppings;
+      let image;
       if(this.props.items.options){
         toppings=this.props.items.options.map((opt,i)=>{
           return <label key={i}><input type="checkbox" value={opt} onChange={this.toggleToppings} ref={opt}/>No {opt}</label>
@@ -30,11 +31,15 @@ export default React.createClass({
       if(this.props.extraPrice){
         extraPrice=<h5 className="price">{this.props.items.extraPrice}</h5>;
       }
+      if(this.props.items.image){
+        image=<img className="menu-photo" src={this.props.items.image}/>
+      }
       let item=(<h5 onClick={this.toggleMenu} className="name">{this.props.items.name}</h5>);
       if(this.state.open){
         item=(
               <div className="item-detals">
                   <h5 onClick={this.toggleMenu} className="name"><i className="fa fa-arrow-circle-o-left" aria-hidden="true"></i>{this.props.items.name}</h5>
+                  {image}
                   {description}
                   <form onSubmit={this.handleSubmit}>
                     {toppings}
@@ -47,7 +52,7 @@ export default React.createClass({
       }
 
 
-
+console.log(this.props);
 
     return(
           <li>

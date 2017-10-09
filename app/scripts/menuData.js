@@ -97,27 +97,33 @@
           title: "Mama's Enchiladas",
           name: '"Separados Pero No Divorciados"',
           price: 10.99,
-          description: "Try any of our 2 sauces with your choice of (4) Chicken or Cheese enchiladas served in a bed of lettuce, tomato, sour cream with rice and beans"
+          description: "Try any of our 2 sauces with your choice of (4) Chicken or Cheese enchiladas served in a bed of lettuce, tomato, sour cream with rice and beans",
+          image:"../../../assets/images/mamas1.jpg"
       }, {
           name: "Mama's Specialty Green Enchiladas",
           price: 9.99,
-          description: "Mama's Green Enchiladas are prepared in a homemade creamy long green chile verde sauce, Your choice of (3) cheese, or chicken enchiladas served with rice and beans"
+          description: "Mama's Green Enchiladas are prepared in a homemade creamy long green chile verde sauce, Your choice of (3) cheese, or chicken enchiladas served with rice and beans",
+          image:"../../assets/images/mamas1.jpg"
       }, {
           name: "Red Enchiladas",
           price: 9.99,
-          description: "Our Red Enchiladas are prepared in a combination of different red chiles blended togther for our Special Red Chile Colorado Sauce, your choice of (3) cheese or chicken enchiladas served with lettuce, tomato, sour cream, rice and beans"
+          description: "Our Red Enchiladas are prepared in a combination of different red chiles blended togther for our Special Red Chile Colorado Sauce, your choice of (3) cheese or chicken enchiladas served with lettuce, tomato, sour cream, rice and beans",
+          image:"../../assets/images/mamas1.jpg"
       }, {
           name: "Spicy Creamy Chipotle Enchiladas",
           price: 9.99,
-          description: "Your choice of (3) cheese or chicken spicy enchiladas topped in a delicious blend of Creamy Chipotle, Fresh Roasted tomatoes and Sundried Tomatoes served with rice beans and topped with lettuce, tomato, sour cream"
+          description: "Your choice of (3) cheese or chicken spicy enchiladas topped in a delicious blend of Creamy Chipotle, Fresh Roasted tomatoes and Sundried Tomatoes served with rice beans and topped with lettuce, tomato, sour cream",
+          image:"../../assets/images/mamas1.jpg"
       }, {
           name: "Enchiladas Poblanas",
           price: 9.99,
-          description: "Your choice of (3) cheese or chicken enchiladas prepared in a delicious combination of fresh roasted tomatillos and chile poblano served with rice and beans topped with lettuce, tomato and sour cream"
+          description: "Your choice of (3) cheese or chicken enchiladas prepared in a delicious combination of fresh roasted tomatillos and chile poblano served with rice and beans topped with lettuce, tomato and sour cream",
+          image:"../../assets/images/mamas1.jpg"
       }, {
           name: "Spicy Entomatadas",
           price: 9.99,
-          description: "Your choice of (3) cheese or chicken spicy entomatadas topped with our sauce of blended roasted tomatoes served with rice and beans"
+          description: "Your choice of (3) cheese or chicken spicy entomatadas topped with our sauce of blended roasted tomatoes served with rice and beans",
+          image:"../../assets/images/mamas1.jpg"
       },
 
 

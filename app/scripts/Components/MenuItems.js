@@ -22,7 +22,7 @@ export default React.createClass({
         });
       }
     return(
-      <div  className="menu-section">
+      <div className="menu-section">
         <h3 onClick={this.toggleMenu} className="title">{this.props.data[0].title}</h3>
         {items}
       </div>
